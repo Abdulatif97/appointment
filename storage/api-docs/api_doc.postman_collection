@@ -1,0 +1,592 @@
+{
+	"info": {
+		"_postman_id": "073235ad-52a6-4d41-99a1-3a875e32d09f",
+		"name": "New Collection Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9108030"
+	},
+	"item": [
+		{
+			"name": "Appointment show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "NRkb3DC5nxN4949DDGhy9YBqCgOviBEuduvBkCDzsW3FzPVtRe3JIXcNpsu7SsUK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://example2.lc/api/v1/appointment",
+					"protocol": "http",
+					"host": [
+						"example2",
+						"lc"
+					],
+					"path": [
+						"api",
+						"v1",
+						"appointment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Appointment list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://example2.lc/api/v1/appointment",
+							"protocol": "http",
+							"host": [
+								"example2",
+								"lc"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 16 Oct 2022 18:45:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/7.4.16"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"a1723d1c-1674-48ae-85f3-080179bf65ed\",\n            \"identifier\": [\n                {\n                    \"use\": \"secondary\",\n                    \"type\": \"RI\",\n                    \"system\": \"http://some-company.uz\",\n                    \"value\": \"84052\",\n                    \"start_date\": \"2022-05-18 00:00:00\",\n                    \"end_date\": null,\n                    \"period\": {\n                        \"start\": \"2022-05-18 00:00:00\",\n                        \"end\": null\n                    },\n                    \"assigner\": \"SomeCompany LLC\"\n                }\n            ],\n            \"participant\": [\n                {\n                    \"actor\": {\n                        \"reference\": \"Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2\"\n                    }\n                },\n                {\n                    \"actor\": {\n                        \"reference\": \"Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2\"\n                    }\n                }\n            ],\n            \"status\": \"proposed\",\n            \"performer\": {\n                \"reference\": \"Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"perPage\": 10,\n        \"count\": 1,\n        \"total\": 1,\n        \"prev\": null,\n        \"next\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Appointment list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "NRkb3DC5nxN4949DDGhy9YBqCgOviBEuduvBkCDzsW3FzPVtRe3JIXcNpsu7SsUK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://example2.lc/api/v1/appointment?participant=e84abf7e-13dc-11ed-a75f-d45d646bc9f2&performer=d3880af0-13c9-11ed-907a-d45d646bc9f2",
+					"protocol": "http",
+					"host": [
+						"example2",
+						"lc"
+					],
+					"path": [
+						"api",
+						"v1",
+						"appointment"
+					],
+					"query": [
+						{
+							"key": "participant",
+							"value": "e84abf7e-13dc-11ed-a75f-d45d646bc9f2"
+						},
+						{
+							"key": "performer",
+							"value": "d3880af0-13c9-11ed-907a-d45d646bc9f2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Appointment list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://example2.lc/api/v1/appointment?participant=e84abf7e-13dc-11ed-a75f-d45d646bc9f2&performer=d3880af0-13c9-11ed-907a-d45d646bc9f2",
+							"protocol": "http",
+							"host": [
+								"example2",
+								"lc"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointment"
+							],
+							"query": [
+								{
+									"key": "participant",
+									"value": "e84abf7e-13dc-11ed-a75f-d45d646bc9f2"
+								},
+								{
+									"key": "performer",
+									"value": "d3880af0-13c9-11ed-907a-d45d646bc9f2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 17 Oct 2022 07:43:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/7.4.16"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "54"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"58a16191-f843-485b-958d-c00549158b61\",\n        \"identifier\": [\n            {\n                \"use\": \"secondary\",\n                \"type\": \"RI\",\n                \"system\": \"http://some-company.uz\",\n                \"value\": \"84152\",\n                \"start_date\": \"2022-05-18 00:00:00\",\n                \"end_date\": null,\n                \"period\": {\n                    \"start\": \"2022-05-18 00:00:00\",\n                    \"end\": null\n                },\n                \"assigner\": \"SomeCompany LLC\"\n            }\n        ],\n        \"participant\": [\n            {\n                \"actor\": {\n                    \"reference\": \"Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2\"\n                }\n            },\n            {\n                \"actor\": {\n                    \"reference\": \"Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2\"\n                }\n            }\n        ],\n        \"status\": \"FULFILLED\",\n        \"performer\": {\n            \"reference\": \"Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2\"\n        }\n    },\n    {\n        \"id\": \"c3b6f2b8-fa1e-44f0-8b6e-057a9c9323fe\",\n        \"identifier\": [\n            {\n                \"use\": \"secondary\",\n                \"type\": \"RI\",\n                \"system\": \"http://some-company.uz\",\n                \"value\": \"84122\",\n                \"start_date\": \"2022-05-18 00:00:00\",\n                \"end_date\": null,\n                \"period\": {\n                    \"start\": \"2022-05-18 00:00:00\",\n                    \"end\": null\n                },\n                \"assigner\": \"SomeCompany LLC\"\n            }\n        ],\n        \"participant\": [\n            {\n                \"actor\": {\n                    \"reference\": \"Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2\"\n                }\n            },\n            {\n                \"actor\": {\n                    \"reference\": \"Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2\"\n                }\n            }\n        ],\n        \"status\": \"BOOKED\",\n        \"performer\": {\n            \"reference\": \"Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Appointment Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "NRkb3DC5nxN4949DDGhy9YBqCgOviBEuduvBkCDzsW3FzPVtRe3JIXcNpsu7SsUK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"identifier\": [\r\n    {\r\n      \"use\": \"secondary\",\r\n      \"type\": \"RI\",\r\n      \"system\": \"http://company.uz\",\r\n      \"value\": \"81122\",\r\n      \"period\": {\r\n        \"start\": \"2022-05-18\",\r\n        \"end\": null\r\n      },\r\n      \"assigner\": \"Company LLC\"\r\n    }\r\n  ],\r\n  \"participant\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9s2\"\r\n      }\r\n    },\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"Patient/1bde98b0-13dd-11ed-9c13-d45d646bc1f2\"\r\n      }\r\n    }\r\n  ],\r\n  \"performer\": {\r\n    \"reference\": \"Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://example2.lc/api/v1/appointment",
+					"protocol": "http",
+					"host": [
+						"example2",
+						"lc"
+					],
+					"path": [
+						"api",
+						"v1",
+						"appointment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Appointment Create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"identifier\": [\r\n    {\r\n      \"use\": \"secondary\",\r\n      \"type\": \"RI\",\r\n      \"system\": \"http://company.uz\",\r\n      \"value\": \"81122\",\r\n      \"period\": {\r\n        \"start\": \"2022-05-18\",\r\n        \"end\": null\r\n      },\r\n      \"assigner\": \"Company LLC\"\r\n    }\r\n  ],\r\n  \"participant\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9s2\"\r\n      }\r\n    },\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"Patient/1bde98b0-13dd-11ed-9c13-d45d646bc1f2\"\r\n      }\r\n    }\r\n  ],\r\n  \"performer\": {\r\n    \"reference\": \"Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "http://example2.lc/api/v1/appointment",
+							"protocol": "http",
+							"host": [
+								"example2",
+								"lc"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 17 Oct 2022 05:46:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/7.4.16"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Appointment created.\",\n    \"data\": {\n        \"id\": \"59fb5975-ae82-4575-b3ca-ac26755d1523\",\n        \"identifier\": [\n            {\n                \"use\": \"secondary\",\n                \"type\": \"RI\",\n                \"system\": \"http://company.uz\",\n                \"value\": \"81122\",\n                \"start_date\": \"2022-05-18 00:00:00\",\n                \"end_date\": null,\n                \"period\": {\n                    \"start\": \"2022-05-18 00:00:00\",\n                    \"end\": null\n                },\n                \"assigner\": \"Company LLC\"\n            }\n        ],\n        \"participant\": [\n            {\n                \"actor\": {\n                    \"reference\": \"Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9s2\"\n                }\n            },\n            {\n                \"actor\": {\n                    \"reference\": \"Patient/1bde98b0-13dd-11ed-9c13-d45d646bc1f2\"\n                }\n            }\n        ],\n        \"status\": \"BOOKED\",\n        \"performer\": {\n            \"reference\": \"Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Appointment change-status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "NRkb3DC5nxN4949DDGhy9YBqCgOviBEuduvBkCDzsW3FzPVtRe3JIXcNpsu7SsUK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"ARRIVED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://example2.lc/api/v1/appointment/change-status/:id",
+					"protocol": "http",
+					"host": [
+						"example2",
+						"lc"
+					],
+					"path": [
+						"api",
+						"v1",
+						"appointment",
+						"change-status",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "58a16191-f843-485b-958d-c00549158b61"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Appointment change-status",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"ARRIVED\"\r\n}"
+						},
+						"url": {
+							"raw": "http://example2.lc/api/v1/appointment/change-status/:id",
+							"protocol": "http",
+							"host": [
+								"example2",
+								"lc"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointment",
+								"change-status",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "58a16191-f843-485b-958d-c00549158b61"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 17 Oct 2022 07:48:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/7.4.16"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Appointment updated.\",\n    \"data\": {\n        \"id\": \"58a16191-f843-485b-958d-c00549158b61\",\n        \"identifier\": [\n            {\n                \"use\": \"secondary\",\n                \"type\": \"RI\",\n                \"system\": \"http://some-company.uz\",\n                \"value\": \"84152\",\n                \"start_date\": \"2022-05-18 00:00:00\",\n                \"end_date\": null,\n                \"period\": {\n                    \"start\": \"2022-05-18 00:00:00\",\n                    \"end\": null\n                },\n                \"assigner\": \"SomeCompany LLC\"\n            }\n        ],\n        \"participant\": [\n            {\n                \"actor\": {\n                    \"reference\": \"Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2\"\n                }\n            },\n            {\n                \"actor\": {\n                    \"reference\": \"Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2\"\n                }\n            }\n        ],\n        \"status\": \"ARRIVED\",\n        \"performer\": {\n            \"reference\": \"Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2\"\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}

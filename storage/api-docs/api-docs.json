@@ -1,0 +1,378 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Example for response examples value",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api": {},
+        "/api/v1/appointment": {
+            "get": {
+                "summary": "Appointment List",
+                "description": "Return json",
+                "operationId": "3511c5498535e235fa1371cee6f5442c",
+                "parameters": [
+                    {
+                        "name": "participant",
+                        "in": "query",
+                        "description": "participant"
+                    },
+                    {
+                        "name": "performer",
+                        "in": "query",
+                        "description": "performer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "An result object.",
+                                        "value": {
+                                            "data": [
+                                                {
+                                                    "id": "58a16191-f843-485b-958d-c00549158b61",
+                                                    "identifier": [
+                                                        {
+                                                            "use": "secondary",
+                                                            "type": "RI",
+                                                            "system": "http://some-company.uz",
+                                                            "value": "84152",
+                                                            "start_date": "2022-05-18 00:00:00",
+                                                            "end_date": null,
+                                                            "period": {
+                                                                "start": "2022-05-18 00:00:00",
+                                                                "end": null
+                                                            },
+                                                            "assigner": "SomeCompany LLC"
+                                                        }
+                                                    ],
+                                                    "participant": [
+                                                        {
+                                                            "actor": {
+                                                                "reference": "Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2"
+                                                            }
+                                                        },
+                                                        {
+                                                            "actor": {
+                                                                "reference": "Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "status": "BOOKED",
+                                                    "performer": {
+                                                        "reference": "Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Adds a new appointment - with oneOf examples",
+                "operationId": "a69786508056c5bd23c4df1822780ce2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "identifier": [
+                                        {
+                                            "use": "secondary",
+                                            "type": "RI",
+                                            "system": "http://some-company.uz",
+                                            "value": "84122",
+                                            "period": {
+                                                "start": "2022-05-18",
+                                                "end": null
+                                            },
+                                            "assigner": "SomeCompany LLC"
+                                        }
+                                    ],
+                                    "participant": [
+                                        {
+                                            "actor": {
+                                                "reference": "Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2"
+                                            }
+                                        },
+                                        {
+                                            "actor": {
+                                                "reference": "Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2"
+                                            }
+                                        }
+                                    ],
+                                    "performer": {
+                                        "reference": "Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "oneOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Result"
+                                        },
+                                        {
+                                            "type": "boolean"
+                                        }
+                                    ]
+                                },
+                                "examples": {
+                                    "result": {
+                                        "summary": "An result object.",
+                                        "value": {
+                                            "message": "Appointment created.",
+                                            "data": {
+                                                "id": "59fb5975-ae82-4575-b3ca-ac26755d1523",
+                                                "identifier": [
+                                                    {
+                                                        "use": "secondary",
+                                                        "type": "RI",
+                                                        "system": "http://company.uz",
+                                                        "value": "81122",
+                                                        "start_date": "2022-05-18 00:00:00",
+                                                        "end_date": null,
+                                                        "period": {
+                                                            "start": "2022-05-18 00:00:00",
+                                                            "end": null
+                                                        },
+                                                        "assigner": "Company LLC"
+                                                    }
+                                                ],
+                                                "participant": [
+                                                    {
+                                                        "actor": {
+                                                            "reference": "Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9s2"
+                                                        }
+                                                    },
+                                                    {
+                                                        "actor": {
+                                                            "reference": "Patient/1bde98b0-13dd-11ed-9c13-d45d646bc1f2"
+                                                        }
+                                                    }
+                                                ],
+                                                "status": "BOOKED",
+                                                "performer": {
+                                                    "reference": "Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "bool": {
+                                        "summary": "A boolean value.",
+                                        "value": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/appointment/show/{id}": {
+            "get": {
+                "summary": "Appointment show",
+                "description": "Return json",
+                "operationId": "e424cb673da47816e3e1566cf806e89c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "An result object.",
+                                        "value": {
+                                            "data": {
+                                                "id": "58a16191-f843-485b-958d-c00549158b61",
+                                                "identifier": [
+                                                    {
+                                                        "use": "secondary",
+                                                        "type": "RI",
+                                                        "system": "http://some-company.uz",
+                                                        "value": "84152",
+                                                        "start_date": "2022-05-18 00:00:00",
+                                                        "end_date": null,
+                                                        "period": {
+                                                            "start": "2022-05-18 00:00:00",
+                                                            "end": null
+                                                        },
+                                                        "assigner": "SomeCompany LLC"
+                                                    }
+                                                ],
+                                                "participant": [
+                                                    {
+                                                        "actor": {
+                                                            "reference": "Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2"
+                                                        }
+                                                    },
+                                                    {
+                                                        "actor": {
+                                                            "reference": "Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2"
+                                                        }
+                                                    }
+                                                ],
+                                                "status": "ARRIVED",
+                                                "performer": {
+                                                    "reference": "Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/appointment/change-status/{id}": {
+            "patch": {
+                "summary": "Appointment status change",
+                "description": "Return json",
+                "operationId": "57198ebb4e835cc70f4c23bc060e3724",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "status": "ARRIVED"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "An result object.",
+                                        "value": {
+                                            "message": "Appointment updated.",
+                                            "data": {
+                                                "id": "58a16191-f843-485b-958d-c00549158b61",
+                                                "identifier": [
+                                                    {
+                                                        "use": "secondary",
+                                                        "type": "RI",
+                                                        "system": "http://some-company.uz",
+                                                        "value": "84152",
+                                                        "start_date": "2022-05-18 00:00:00",
+                                                        "end_date": null,
+                                                        "period": {
+                                                            "start": "2022-05-18 00:00:00",
+                                                            "end": null
+                                                        },
+                                                        "assigner": "SomeCompany LLC"
+                                                    }
+                                                ],
+                                                "participant": [
+                                                    {
+                                                        "actor": {
+                                                            "reference": "Practitioner/e84abf7e-13dc-11ed-a75f-d45d646bc9f2"
+                                                        }
+                                                    },
+                                                    {
+                                                        "actor": {
+                                                            "reference": "Patient/1bde98b0-13dd-11ed-9c13-d45d646bc9f2"
+                                                        }
+                                                    }
+                                                ],
+                                                "status": "ARRIVED",
+                                                "performer": {
+                                                    "reference": "Organization/d3880af0-13c9-11ed-907a-d45d646bc9f2"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Result": {
+                "title": "Sample schema for using references",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "error": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearer_token": {
+                "type": "apiKey",
+                "description": "Enter token in format (Bearer <token>)",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
